@@ -24,18 +24,19 @@
         </div>
         <div class="card-body">
             <div class="col-lg-8 col-md-8 col-sm-12">
-                <form action="">
+                <form action="/store" method="post">
+                    {{ csrf_field() }}
                     <div class="form-group form-content mt-4">
                         <label for="nama" class="mb-3">Nama</label>
-                        <input type="text" class="form-control-lg form-control" id="nama" placeholder="Nama">
+                        <input type="text" name="nama" class="form-control-lg form-control" id="nama" placeholder="Nama">
                     </div>
                     <div class="form-group form-content mt-4">
                         <label for="nim" class="mb-3">NIM</label>
-                        <input type="number" class="form-control-lg form-control" id="nim" placeholder="1202190000">
+                        <input type="number" name="nim" class="form-control-lg form-control" id="nim" placeholder="1202190000">
                     </div>
                     <div class="form-group form-content mt-4">
                         <label for="email" class="mb-3">E-mail</label>
-                        <input type="email" class="form-control-lg form-control" id="email" placeholder="name@domain.com">
+                        <input type="email" name="email" class="form-control-lg form-control" id="email" placeholder="name@domain.com">
                     </div>
                     <div class="form-group form-content mt-4">
                         <label for="angkatan" class="mb-3">Angkatan</label>

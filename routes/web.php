@@ -24,3 +24,5 @@ Route::get('/form',function (){
 Route::get('/form/success',function (){
     return view('/form/form-success');
 });
+
+Route::post('/store', 'OpenMindController@store'); 

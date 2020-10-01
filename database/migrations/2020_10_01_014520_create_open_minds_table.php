@@ -20,7 +20,7 @@ class CreateOpenMindsTable extends Migration
             $table->string('email');
             $table->string('angkatan');
             $table->timestamps();
-        });
+        }); 
     } 
 
     /**
