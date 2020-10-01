@@ -17,12 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/form',function (){
-    return view('/form/form-index');
+Route::get('/openmind',function (){
+    return view('open_minds.index');
 });
-
-Route::get('/form/success',function (){
-    return view('/form/form-success');
-});
-
-Route::post('/store', 'OpenMindController@store'); 
+Route::post('/openmind', 'OpenMindController@store')->name('openMind.store'); 

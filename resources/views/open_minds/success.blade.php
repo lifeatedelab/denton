@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>EDE Laboratory</title>
-    <link href="{{'../assets/css/bootstrap.css'}}" rel="stylesheet">
-    <link href="{{'../assets/css/custom.css'}}" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{asset('css/custom.css')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Source+Sans+Pro&display=swap"
           rel="stylesheet">
@@ -19,7 +19,7 @@
                 ANDA SUDAH TERDAFTAR
             </h1>
             <h5 class="sub-title">
-                silakan untuk cek email dalam beberapan waktu ke depan
+                silakan untuk cek email dalam beberapa waktu ke depan
             </h5>
         </div>
     </div>

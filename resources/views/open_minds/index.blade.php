@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>EDE Laboratory</title>
-    <link href="{{'assets/css/bootstrap.css'}}" rel="stylesheet">
-    <link href="{{'assets/css/custom.css'}}" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{asset('css/custom.css')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Source+Sans+Pro&display=swap"
           rel="stylesheet">
@@ -24,25 +24,35 @@
         </div>
         <div class="card-body">
             <div class="col-lg-8 col-md-8 col-sm-12">
-                <form action="/store" method="post">
-                    {{ csrf_field() }}
+                <form action="{{ route('openMind.store')}}" method="post">
+                    @csrf
                     <div class="form-group form-content mt-4">
                         <label for="nama" class="mb-3">Nama</label>
-                        <input type="text" name="nama" class="form-control-lg form-control" id="nama" placeholder="Nama">
+                        <input type="text" name="nama" value="{{ old('nama') }}" class="form-control-lg form-control {{ $errors->has('nama')?'is-invalid':'' }}" id="nama" placeholder="Nama" required autofocus>
                     </div>
                     <div class="form-group form-content mt-4">
                         <label for="nim" class="mb-3">NIM</label>
-                        <input type="number" name="nim" class="form-control-lg form-control" id="nim" placeholder="1202190000">
+                        <input type="number" name="nim" value="{{ old('nim') }}" class="form-control-lg form-control {{ $errors->has('nim')?'is-invalid':'' }}" id="nim" placeholder="1202190000" required>
+                        @if ($errors->has('nim'))
+                        <span class="invalid-feedback">
+                          <strong>{{ $errors->first('nim') }}</strong>
+                        </span>
+                        @endif
                     </div>
                     <div class="form-group form-content mt-4">
                         <label for="email" class="mb-3">E-mail</label>
-                        <input type="email" name="email" class="form-control-lg form-control" id="email" placeholder="name@domain.com">
+                        <input type="email" name="email" value="{{ old('email') }}" class="form-control-lg form-control {{ $errors->has('email')?'is-invalid':'' }}" id="email" placeholder="name@domain.com" required>
+                        @if ($errors->has('email'))
+                        <span class="invalid-feedback">
+                          <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                        @endif
                     </div>
                     <div class="form-group form-content mt-4">
                         <label for="angkatan" class="mb-3">Angkatan</label>
-                        <select name="angkatan" id="angkatan" class="form-select-lg form-select">
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
+                        <select name="angkatan" id="angkatan" class="form-select-lg form-select {{ $errors->has('angkatan')?'is-invalid':'' }}" required>
+                            <option value="2018" {{old('angkatan') == '2018' ? 'selected':''}}>2018</option>
+                            <option value="2019" {{old('angkatan') == '2019' ? 'selected':''}}>2019</option>
                         </select>
                     </div>
                     <div class="form-group form-content mt-5">
