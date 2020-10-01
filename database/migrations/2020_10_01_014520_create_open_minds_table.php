@@ -21,7 +21,7 @@ class CreateOpenMindsTable extends Migration
             $table->string('angkatan');
             $table->timestamps();
         });
-    }
+    } 
 
     /**
      * Reverse the migrations.
