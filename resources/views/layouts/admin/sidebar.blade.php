@@ -39,7 +39,13 @@
                 <i class="ni ni-folder-17 text-info"></i>
                 <span class="nav-link-text">Portfolios</span>
               </a>              
-            </li>            
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ Request::is('portfolio') ? 'active':'' }}" href="">              
+                <i class="ni ni-folder-17 text-info"></i>
+                <span class="nav-link-text">Lala</span>
+              </a>              
+            </li>                     
           </ul>
           <!-- Divider -->
           <hr class="my-3">                
